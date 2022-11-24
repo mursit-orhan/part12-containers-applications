@@ -1,5 +1,7 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+require('dotenv').config()
+const redis = require('../redis')
+const router = express.Router()
 
 const configs = require('../util/config')
 
@@ -11,8 +13,8 @@ router.get('/', async (req, res) => {
 
   res.send({
     ...configs,
-    visits
-  });
-});
+    visits,
+  })
+})
 
-module.exports = router;
+module.exports = router
